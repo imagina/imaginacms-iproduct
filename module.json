@@ -1,0 +1,14 @@
+{
+    "name": "Iproduct",
+    "alias": "iproduct",
+    "version": "1.0.0",
+	"description": "",
+    "keywords": [],
+    "priority": 1,
+    "providers": [
+        "Modules\\Iproduct\\Providers\\IproductServiceProvider",
+        "Modules\\Iproduct\\Providers\\EventServiceProvider",
+        "Modules\\Iproduct\\Providers\\RouteServiceProvider"
+    ],
+    "files": []
+}
