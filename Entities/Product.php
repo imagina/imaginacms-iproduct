@@ -9,6 +9,7 @@ class Product extends CrudModel
 {
   use Translatable;
 
+  static $dynamicTraits = ['Modules\Iprice\Traits\HasPrices'];
   protected $table = 'iproduct__products';
   public $transformer = 'Modules\Iproduct\Transformers\ProductTransformer';
   public $repository = 'Modules\Iproduct\Repositories\ProductRepository';
