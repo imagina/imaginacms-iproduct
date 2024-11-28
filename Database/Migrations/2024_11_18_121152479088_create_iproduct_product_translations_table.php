@@ -35,6 +35,9 @@ class CreateIproductProductTranslationsTable extends Migration
    */
   public function down()
   {
-    //
+    Schema::table('iproduct__product_translations', function (Blueprint $table) {
+      $table->dropForeign(['product_id']);
+    });
+    Schema::dropIfExists('iproduct__product_translations');
   }
 }
