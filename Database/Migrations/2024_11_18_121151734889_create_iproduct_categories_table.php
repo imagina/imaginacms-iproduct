@@ -17,7 +17,6 @@ return new class extends Migration {
       $table->text('options')->nullable();
       $table->integer('parent_id')->default(0);
       $table->integer('status')->default(1);
-      $table->integer('external_id')->default(0);
 
       // Audit fields
       $table->timestamps();

@@ -13,7 +13,10 @@ class CreateCategoryRequest extends BaseFormRequest
 
     public function translationRules()
     {
-        return [];
+        return [
+          'title' => 'required|min:2',
+          'slug' => 'required|min:2'
+        ];
     }
 
     public function authorize()

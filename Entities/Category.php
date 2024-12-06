@@ -34,7 +34,11 @@ class Category extends CrudModel
   protected $fillable = [
     'parent_id',
     'options',
-    'status',
-    'external_id'
+    'status'
   ];
+
+  public function parent()
+  {
+    return $this->belongsTo(Category::class, 'parent_id');
+  }
 }

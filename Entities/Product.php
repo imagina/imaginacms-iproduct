@@ -41,7 +41,11 @@ class Product extends CrudModel
     'sku',
     'reference',
     'featured',
-    'is_internal',
-    'external_id'
+    'is_internal'
   ];
+
+  public function category()
+  {
+    return $this->belongsTo(Category::class);
+  }
 }

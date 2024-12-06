@@ -16,7 +16,7 @@ class CreateIproductCategoryTranslationsTable extends Migration
       $table->engine = 'InnoDB';
       $table->increments('id');
       $table->text('title');
-      $table->string('slug');
+      $table->string('slug')->unique();
       $table->text('description')->nullable();
 
       $table->integer('category_id')->unsigned();
