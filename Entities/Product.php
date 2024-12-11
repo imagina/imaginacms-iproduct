@@ -4,10 +4,11 @@ namespace Modules\Iproduct\Entities;
 
 use Astrotomic\Translatable\Translatable;
 use Modules\Core\Icrud\Entities\CrudModel;
+use Modules\Media\Support\Traits\MediaRelation;
 
 class Product extends CrudModel
 {
-  use Translatable;
+  use Translatable, MediaRelation;
 
   static $dynamicTraits = ['Modules\Iprice\Traits\HasPrices'];
   protected $table = 'iproduct__products';
