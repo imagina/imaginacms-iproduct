@@ -10,7 +10,7 @@ class Product extends CrudModel
 {
   use Translatable, MediaRelation;
 
-  static $dynamicTraits = ['Modules\Iprice\Traits\HasPrices'];
+  static $dynamicTraits = ['Modules\Iprice\Traits\HasPrices', 'Modules\Iexternal\Traits\HasExternal'];
   protected $table = 'iproduct__products';
   public $transformer = 'Modules\Iproduct\Transformers\ProductTransformer';
   public $repository = 'Modules\Iproduct\Repositories\ProductRepository';
@@ -44,6 +44,8 @@ class Product extends CrudModel
     'featured',
     'is_internal'
   ];
+
+  protected $casts = ['options' => 'array'];
 
   public function category()
   {
