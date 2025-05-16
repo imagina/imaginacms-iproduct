@@ -47,6 +47,20 @@ class EloquentProductRepository extends EloquentCrudRepository implements Produc
      *
      */
 
+    //Filter search
+    if (isset($filter->search)) {
+      $query->where(function ($query) use ($filter) {
+        $query->whereHas('translations', function ($q) use ($filter) {
+          $q->where('title', 'like', "%{$filter->search}%")
+            ->orWhere('slug', 'like', '%' . $filter->search . '%');
+        });
+      })->orWhere('id', 'like', '%' . $filter->search . '%')
+        ->orWhere('sku', 'like', '%' . $filter->search . '%')
+        ->orWhere('reference', 'like', '%' . $filter->search . '%')
+        ->orWhere('updated_at', 'like', '%' . $filter->search . '%')
+        ->orWhere('created_at', 'like', '%' . $filter->search . '%');;
+    }
+
     //Response
     return $query;
   }
